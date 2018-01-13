@@ -7,35 +7,20 @@ import {
   View
 } from 'react-native';
 
-export default class Counter extends Component {
-  constructor(props) {
-    super(props);
+export default Counter = (props) => {
+  const {
+    onCountUp,
+    count
+  } = props;
 
-    this.state = {
-      count: 0,
-    };
-  }
-
-  countUp = () =>  {
-    this.setState({
-      count: ++this.state.count
-    });
-  }
-
-  render() {
-    const {
-      count,
-    } = this.state;
-
-    return (
-      <View>
-        <Text>{ count }</Text>
-        <TouchableOpacity
-          onPress={this.countUp}
-        >
-          <Text>Counter</Text>
-        </TouchableOpacity>
-      </View>
-    )
-  }
+  return (
+    <View>
+      <Text>{ count }</Text>
+      <TouchableOpacity
+        onPress={onCountUp}
+      >
+        <Text>Count Up</Text>
+      </TouchableOpacity>
+    </View>
+  );
 }
