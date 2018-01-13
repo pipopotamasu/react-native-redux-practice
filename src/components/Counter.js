@@ -20,8 +20,6 @@ export default class Counter extends Component {
     this.setState({
       count: ++this.state.count
     });
-
-    console.log(this.state.count);
   }
 
   render() {
