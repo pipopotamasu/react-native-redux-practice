@@ -13,16 +13,16 @@ import {
 } from 'react-native';
 import { connect } from 'react-redux'
 import Counter from './components/Counter';
-import { countUp } from './actions/counter'
+import { countUp, countDown } from './actions/counter'
 
 class App extends Component<{}> {
   render() {
     const { dispatch, count } = this.props;
-    console.log(count)
     return (
       <View style={styles.container}>
         <Counter
-          onCountUp={ () => dispatch(countUp('hoge')) }
+          onCountUp={ () => dispatch(countUp()) }
+          onCountDown={ () => dispatch(countDown()) }
           count={ count }
           ></Counter>
       </View>

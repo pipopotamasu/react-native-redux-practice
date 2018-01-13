@@ -3,11 +3,16 @@
  */
 
 export const COUNT_UP = 'COUNT_UP'
+export const COUNT_DOWN = 'COUNT_DOWN'
 
 /*
  * action creators
  */
 
-export function countUp(text) {
-  return { type: COUNT_UP, text }
+export function countUp() {
+  return { type: COUNT_UP }
+}
+
+export function countDown() {
+  return { type: COUNT_DOWN }
 }

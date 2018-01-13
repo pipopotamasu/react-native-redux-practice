@@ -10,16 +10,22 @@ import {
 export default Counter = (props) => {
   const {
     onCountUp,
+    onCountDown,
     count
   } = props;
 
   return (
     <View>
-      <Text>{ count }</Text>
+      <Text>count: { count }</Text>
       <TouchableOpacity
         onPress={onCountUp}
       >
         <Text>Count Up</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        onPress={onCountDown}
+      >
+        <Text>Count Down</Text>
       </TouchableOpacity>
     </View>
   );
