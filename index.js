@@ -1,8 +1,8 @@
 import { AppRegistry } from 'react-native';
 import App from './src/App';
 import { createStore } from 'redux';
-import { Provider } from 'react-redux/native';
-import Counter from './reducers/counter.js';
+import { Provider } from 'react-redux';
+import Counter from './src/reducers/index.js';
 
 let store = createStore(Counter)
 
