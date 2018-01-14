@@ -11,6 +11,7 @@ export default Counter = (props) => {
   const {
     onCountUp,
     onCountDown,
+    onInputCount
     count
   } = props;
 

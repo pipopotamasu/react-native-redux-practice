@@ -13,7 +13,7 @@ import {
 } from 'react-native';
 import { connect } from 'react-redux'
 import Counter from './components/Counter';
-import { countUp, countDown } from './actions/counter'
+import { countUp, countDown, inputCount } from './actions/counter'
 
 class App extends Component<{}> {
   render() {
@@ -23,6 +23,7 @@ class App extends Component<{}> {
         <Counter
           onCountUp={ () => dispatch(countUp()) }
           onCountDown={ () => dispatch(countDown()) }
+          onInputCount={ (count) => dispatch(inputCount(count)) }
           count={ count }
           ></Counter>
       </View>
