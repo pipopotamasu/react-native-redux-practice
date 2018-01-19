@@ -4,7 +4,8 @@ import {
   FlatList,
   TouchableOpacity,
   Text,
-  View
+  View,
+  TextInput
 } from 'react-native';
 
 export default Counter = (props) => {
@@ -34,6 +35,18 @@ export default Counter = (props) => {
           <Text style={styles.buttonText}>Count Down</Text>
         </TouchableOpacity>
       </View>
+      <View>
+        <TextInput
+          style={styles.input}
+          value={count.toString()}
+        />
+        <TouchableOpacity
+          style={styles.button}
+          onPress={this._onPress}
+        >
+          <Text style={styles.buttonText}>Set Count</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 }
@@ -59,5 +72,10 @@ const styles = StyleSheet.create({
   buttonText: {
     color: '#FFF',
     fontWeight: '500',
-  }
+  },
+  input: {
+    color: '#FFF',
+    backgroundColor: 'black',
+    marginRight: 5,
+  },
 });
