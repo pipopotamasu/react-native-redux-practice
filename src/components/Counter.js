@@ -7,6 +7,7 @@ import {
   View,
   TextInput
 } from 'react-native';
+import CounterInput from './CounterInput'
 
 export default Counter = (props) => {
   const {
