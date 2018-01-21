@@ -36,18 +36,11 @@ export default Counter = (props) => {
           <Text style={styles.buttonText}>Count Down</Text>
         </TouchableOpacity>
       </View>
-      <View>
-        <TextInput
-          style={styles.input}
-          value={count.toString()}
-        />
-        <TouchableOpacity
-          style={styles.button}
-          onPress={this._onPress}
-        >
-          <Text style={styles.buttonText}>Set Count</Text>
-        </TouchableOpacity>
-      </View>
+      <CounterInput
+        onCounterInput={onInputCount}
+        count={count}
+      >
+      </CounterInput>
     </View>
   );
 }
