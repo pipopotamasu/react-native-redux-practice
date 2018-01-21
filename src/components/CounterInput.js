@@ -41,10 +41,6 @@ export default class CounterInput extends Component {
 
 
   render() {
-    const {
-      onInputCount,
-      count
-    } = this.props
 
     return (
       <View>
