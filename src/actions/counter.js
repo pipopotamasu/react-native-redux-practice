@@ -19,5 +19,5 @@ export function countDown() {
 }
 
 export function inputCount(count) {
-  return { type: COUNT_DOWN, count: count }
+  return { type: INPUT_COUNT, count: count }
 }
