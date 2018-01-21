@@ -37,7 +37,7 @@ export default Counter = (props) => {
         </TouchableOpacity>
       </View>
       <CounterInput
-        onCounterInput={onInputCount}
+        onInputCount={onInputCount}
         count={count}
       >
       </CounterInput>

@@ -34,6 +34,11 @@ export default class CounterInput extends Component {
     };
   }
 
+  _onPress = () => {
+    this.props.onInputCount(this.state.input);
+    this.setState({input: ''})
+  }
+
 
   render() {
     const {
@@ -45,11 +50,12 @@ export default class CounterInput extends Component {
       <View>
         <TextInput
           style={styles.input}
-          value={count.toString()}
+          onChangeText={(input) => this.setState({input})}
+          value={this.state.input}
         />
         <TouchableOpacity
           style={styles.button}
-          onPress={onInputCount}
+          onPress={this._onPress}
         >
           <Text style={styles.buttonText}>Set Count</Text>
         </TouchableOpacity>
