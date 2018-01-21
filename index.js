@@ -7,16 +7,6 @@ import Counter from './src/reducers/index.js';
 
 let store = createStore(Counter)
 
-// let ReduxApp = React.createClass({
-//   render: function() {
-//     return(
-//       <Provider store={store}>
-//        {() => <App />}
-//       </Provider>
-//     );
-//   }
-// });
-
 class ReduxApp extends Component<{}> {
     render() {
       return(
