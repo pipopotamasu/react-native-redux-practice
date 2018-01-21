@@ -39,6 +39,11 @@ export default class CounterInput extends Component {
     this.setState({input: ''})
   }
 
+  _onChangeInput = (input) => {
+    if(isNaN(input)) return;
+    this.setState({input})
+  }
+
 
   render() {
 
@@ -46,7 +51,7 @@ export default class CounterInput extends Component {
       <View>
         <TextInput
           style={styles.input}
-          onChangeText={(input) => this.setState({input})}
+          onChangeText={(input) => this._onChangeInput(input)}
           value={this.state.input}
         />
         <TouchableOpacity
