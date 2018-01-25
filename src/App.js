@@ -13,16 +13,16 @@ import {
 } from 'react-native';
 import { connect } from 'react-redux'
 import { addNavigationHelpers } from 'react-navigation';
-import { countUp, countDown, inputCount } from './actions/counter'
 import Navigation from './components/Navigation';
 
 class Nav extends Component<{}> {
   render() {
+    const state = Object.assign(this.props.nav.routes[1], { count: this.props.count })
     return (
       <Navigation
         navigation={addNavigationHelpers({
           dispatch: this.props.dispatch,
-          state: this.props.nav
+          state: this.props.nav,
         })}
       />
     )
