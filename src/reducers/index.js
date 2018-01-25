@@ -16,8 +16,8 @@ function count(state = 0, action) {
 }
 
 const reduxApp = combineReducers({
-  count,
-  navReducer
+  count: count,
+  nav: navReducer
 })
 
 export default reduxApp
