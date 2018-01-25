@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux'
 import { COUNT_UP, COUNT_DOWN, INPUT_COUNT } from '../actions/counter'
+import navReducer from './navReducer'
 
 function count(state = 0, action) {
   switch (action.type) {
@@ -14,9 +15,9 @@ function count(state = 0, action) {
   }
 }
 
-// const todoApp = combineReducers({
-//   visibilityFilter,
-//   todos
-// })
+const reduxApp = combineReducers({
+  count,
+  navReducer
+})
 
-export default count
+export default reduxApp
