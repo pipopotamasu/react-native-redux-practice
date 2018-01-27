@@ -7,15 +7,14 @@ import {
   View,
   TextInput
 } from 'react-native';
+import { countUp, countDown, inputCount } from '../actions/counter'
 import CounterInput from './CounterInput'
 
 export default Counter = (props) => {
+  const dispatch = props.navigation.dispatch
   const {
-    onCountUp,
-    onCountDown,
-    onInputCount,
     count
-  } = props;
+  } = props.navigation.state;
 
   return (
     <View style={styles.container}>
@@ -24,20 +23,20 @@ export default Counter = (props) => {
       </View>
       <View style={styles.buttonContainer}>
         <TouchableOpacity
-          onPress={onCountUp}
+          onPress={ () => dispatch(countUp())}
           style={styles.button}
         >
           <Text style={styles.buttonText}>Count Up</Text>
         </TouchableOpacity>
         <TouchableOpacity
-          onPress={onCountDown}
+          onPress={ () => dispatch(countDown())}
           style={styles.button}
         >
           <Text style={styles.buttonText}>Count Down</Text>
         </TouchableOpacity>
       </View>
       <CounterInput
-        onInputCount={onInputCount}
+        onInputCount={ () => dispatch(inputCount())}
         count={count}
       >
       </CounterInput>

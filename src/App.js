@@ -12,32 +12,29 @@ import {
   View
 } from 'react-native';
 import { connect } from 'react-redux'
-import Counter from './components/Counter';
-import { countUp, countDown, inputCount } from './actions/counter'
+import { addNavigationHelpers } from 'react-navigation';
+import Navigation from './components/Navigation';
 
-class App extends Component<{}> {
+class Nav extends Component<{}> {
   render() {
-    const { dispatch, count } = this.props;
+    const state = Object.assign(this.props.nav.routes[1], { count: this.props.count })
     return (
-      <View style={styles.container}>
-        <Counter
-          onCountUp={ () => dispatch(countUp()) }
-          onCountDown={ () => dispatch(countDown()) }
-          onInputCount={ (count) => dispatch(inputCount(count)) }
-          count={ count }
-          ></Counter>
-      </View>
-    );
+      <Navigation
+        navigation={addNavigationHelpers({
+          dispatch: this.props.dispatch,
+          state: this.props.nav,
+        })}
+      />
+    )
   }
 }
 
-function select(state) {
-  return {
-    count: state,
-  }
-}
+const mapStateToProps = (state, ownProps) => ({
+  nav: state.nav,
+  count: state.count
+});
 
-export default connect(select)(App);
+export default connect(mapStateToProps)(Nav);
 
 const styles = StyleSheet.create({
   container: {
